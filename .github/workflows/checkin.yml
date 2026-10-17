@@ -2,15 +2,14 @@ name: checkin
 
 on:
   schedule:
-    # 晚点名窗口 21:30-23:59（北京时间），迟到线 22:30。
-    # GitHub Actions schedule 使用 UTC cron（北京时间 = UTC+8）：
-    # 21:30 / 21:50 / 22:05 / 23:00 / 23:30 / 23:55（均为北京时间）
-    - cron: "30 13 * * *"
-    - cron: "50 13 * * *"
-    - cron: "5 14 * * *"
-    - cron: "0 15 * * *"
-    - cron: "30 15 * * *"
-    - cron: "55 15 * * *"
+    - cron: '30 21 * * *'
+      timezone: "Asia/Shanghai"
+    - cron: '0 22 * * *'
+      timezone: "Asia/Shanghai"
+    - cron: '30 22 * * *'
+      timezone: "Asia/Shanghai"
+    - cron: '0 23 * * *'
+      timezone: "Asia/Shanghai"
   workflow_dispatch: {}   # 支持手动触发
 
 jobs:
